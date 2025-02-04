@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build C:\\Users\\amanb\\Desktop\\.NET\\.NET.csproj",
+			"file": "C:\\Users\\amanb\\Desktop\\.NET\\.NET.csproj",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "dotnet: build C:\\Users\\amanb\\Desktop\\.NET\\.NET.csproj"
+		}
+	]
+}
