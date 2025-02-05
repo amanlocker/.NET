@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using System.Net;
+using System.Timers;
 
 class MainProgram
 {
@@ -213,6 +214,30 @@ class MainProgram
         //}
         //Console.WriteLine($"the sum of all three-digit is : {sum}");
 
+
+        //Task 10 
+        //Enter three-digit number and display its reverse.
+        //(Example: Input - 123 Output - 321)
+        //Console.Write("Enter a three-digit number: ");
+        //int number = int.Parse(Console.ReadLine());
+
+        //// Initialize a variable to store the reversed number
+        //int reversedNumber = 0;
+
+        //// Loop to reverse the number
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    int remainder = number % 10; // Get the last digit
+        //    reversedNumber = reversedNumber * 10 + remainder; // Append the digit to the reversed number
+        //    number = number / 10; // Remove the last digit
+        //}
+
+        //// Output the reversed number
+        //Console.WriteLine("Reversed number: " + reversedNumber);
+
+
+
+
         //Task 11
         //Enter a number and print its prime or not.
         //Console.Write("Enter number: ");
@@ -265,7 +290,7 @@ class MainProgram
         //        Console.WriteLine($"{year} is not a Leap year");
         //    }
         //}
-        //public static bool IsLeapYear(int year) 
+        //public static bool IsLeapYear(int year)
         //{
         //    if (year % 4 == 0)
         //    {
@@ -687,7 +712,7 @@ class MainProgram
 
 
         // Task 30
-        //  30. Accept 10 numbers in an array and print which numbers are even 
+        // Accept 10 numbers in an array and print which numbers are even 
         // or odd.
         //int[] numbers = new int[10];
         //Console.WriteLine("Please enter 10 numbers: ");
@@ -734,6 +759,126 @@ class MainProgram
         //    Console.Write(number + " ");
         //}
         //Console.WriteLine();
+
+        // Task 32
+        // Accept values in 2D array and perform matrix Addition and
+        // multiplication.
+
+        //int rows1, cols1, rows2, cols2;
+        //while (true)
+        //{
+        //    Console.WriteLine("Enter dimensions for matrix 1:");
+        //    if (int.TryParse(Console.ReadLine(), out rows1) &&
+        //        int.TryParse(Console.ReadLine(), out cols1))
+        //    {
+        //        Console.WriteLine("Enter dimensions for matrix 2:");
+        //        if (int.TryParse(Console.ReadLine(), out rows2) &&
+        //            int.TryParse(Console.ReadLine(), out cols2))
+        //        {
+        //            break;
+        //        }
+        //    }
+        //    Console.WriteLine("Invalid input. Please enter integers for dimensions.");
+        //}
+        //double[,] matrix1 = new double[rows1, cols1];
+        //double[,] matrix2 = new double[rows2, cols2];
+
+        //Console.WriteLine("Enter values for matrix 1:");
+        //for (int i = 0; i < rows1; i++)
+        //{
+        //    for (int j = 0; j < cols1; j++)
+        //    {
+        //        while (true)
+        //        {
+        //            Console.Write($"Element ({i + 1},{j + 1}): ");
+        //            if (double.TryParse(Console.ReadLine(), out double val))
+        //            {
+        //                matrix1[i, j] = val;
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("Invalid input. Please enter a number.");
+        //            }
+        //        }
+        //    }
+        //}
+        //Console.WriteLine("Enter values for matrix 2:");
+        //for (int i = 0; i < rows2; i++)
+        //{
+        //    for (int j = 0; j < cols2; j++)
+        //    {
+        //        while (true)
+        //        {
+        //            Console.Write($"Element ({i + 1},{j + 1}): ");
+        //            if (double.TryParse(Console.ReadLine(), out double val))
+        //            {
+        //                matrix2[i, j] = val;
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("Invalid input. Please enter a number.");
+        //            }
+        //        }
+        //    }
+        //}
+        //// Addition
+        //if (rows1 == rows2 && cols1 == cols2)
+        //{
+        //    double[,] sumMatrix = new double[rows1, cols1];
+        //    for (int i = 0; i < rows1; i++)
+        //    {
+        //        for (int j = 0; j < cols1; j++)
+        //        {
+        //            sumMatrix[i, j] = matrix1[i, j] + matrix2[i, j];
+        //        }
+        //    }
+        //    Console.WriteLine("\nMatrix Sum:");
+        //    for (int i = 0; i < rows1; i++)
+        //    {
+        //        for (int j = 0; j < cols1; j++)
+        //        {
+        //            Console.Write(sumMatrix[i, j] + " ");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
+        //else
+        //{
+        //    Console.WriteLine("\nMatrices are not compatible for addition.");
+        //}
+        //// Multiplication
+        //if (cols1 == rows2)
+        //{
+        //    double[,] productMatrix = new double[rows1, cols2];
+        //    for (int i = 0; i < rows1; i++)
+        //    {
+        //        for (int j = 0; j < cols2; j++)
+        //        {
+        //            for (int k = 0; k < cols1; k++)
+        //            {
+        //                productMatrix[i, j] += matrix1[i, k] * matrix2[k, j];
+        //            }
+        //        }
+        //    }
+        //    Console.WriteLine("\nMatrix Product:");
+        //    for (int i = 0; i < rows1; i++)
+        //    {
+        //        for (int j = 0; j < cols2; j++)
+        //        {
+        //            Console.Write(productMatrix[i, j] + " ");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
+        //else
+        //{
+        //    Console.WriteLine("\nMatrices are not compatible for multiplication.");
+        //}
+        //Console.ReadKey();
+
+
 
         // Task 33
         // Accept 10 numbers in an array and calculate sum of all the 
@@ -1095,7 +1240,27 @@ class MainProgram
         //}
 
         // Pattern 13
-        // 
+        //      1
+        //     1 1
+        //    1 2 1 
+        //   1 3 3 1
+        //  1 4 6 4 1 
+        //1 5 10 10 5 1
+        //int n = 6;
+        //for (int i = 0; i < n; i++)
+        //{
+        //    for (int j = n - i; j > 0; j--)
+        //    {
+        //        Console.Write(" ");
+        //    }
+        //    int m = 1;
+        //    for (int j = 0; j < i + 1; j++)
+        //    {
+        //        Console.Write(m+" ");
+        //        m = m * (i - j) / (j + 1);
+        //    }
+        //    Console.WriteLine();
+        //}
 
 
         // Pattern 14
@@ -1463,7 +1628,6 @@ class MainProgram
         //    int temp = a;
         //    a = b;
         //    b = temp;
-
         //}
         //static void SwapByReference(ref int a, ref int b)// swap by reference
         //{
@@ -1652,7 +1816,7 @@ class MainProgram
         // Name and Roll no from user and display them using Jagged Array.
 
 
-        //////////LEVEL 4 TASK//////////
+        //////////*************************************LEVEL 4 TASK*********************************************//////////
 
         // Task 1
         // Enter a sentence and find the number of spaces, words, vowels and 
@@ -1989,34 +2153,239 @@ class MainProgram
         // Input: “Please feel free to contact me on abhishek.solanki @gmail.com
         // anytime between 10 am to 6 pm.”
         // Extract email id and timings using Regex.
+        //    string input;
+        //i:
+        //    Console.WriteLine("Enter a string to fetch email and time : ");
+
+        //    input = Console.ReadLine();
+
+        //    string email = @"[a-zA-Z0-9._-]+[@]+[A-Za-z.]*";
+        //    string time = @"[0-9]{1,2}\s[a-zA-Z]{2}\s[a-zA-Z]{2}\s[0-9]{1,2}\s[a-zA-Z]{2}";
+
+        //    if (Regex.IsMatch(input, email))
+        //    {
+        //        Match emailmatch = Regex.Match(input, email);
+        //        Console.WriteLine("Found :"+emailmatch);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("didnt found any Email");
+        //    }
+        //    if (Regex.IsMatch(input, time))
+        //    {
+        //        Match timematch = Regex.Match(input, time);
+        //        Console.WriteLine("Found :" + timematch);
+        //    }  
+        //    else
+        //    {
+        //        Console.WriteLine("didnt found any time");
+        //    }
+        //    Console.Write("Enter y to continue n to Exit : ");
+        //    string userinput=Console.ReadLine();
+        //    if (userinput == "y")
+        //    {
+        //        goto i;
+        //    }
+
+        // Task 3
+        // Extract the last 10 numbers from the following phone numbers using 
+        // Regex functions:
+        // Input: +91 9892345679 Output: 9892345679
+        // Input: +913 9862343629 Output: 9862343629
+        // Input: 232 - 888 - 986 - 234 - 3629 Output: 9862343629
+        // Input: 101 986 234 362 8 Output: 9862343628
+
+        //string Userinput;//////////////////Using String Manupulation 
+        //Console.Write("Enter a PhoneNumber : ");
+        //Userinput = Console.ReadLine();
+        //Userinput = Userinput.Replace(" ", "").Replace("+", "").Replace("-", "");
+
+        //string pattern = @"\d{10}$";
+        //if (Regex.IsMatch(Userinput, pattern))
+        //{
+        //    Match number = Regex.Match(Userinput, pattern);
+        //    Console.WriteLine("Found :" + number);
+        //}
+        //Console.WriteLine();
+        /////////////////////////////////////////////////////////////////////
+        /// Using Regex Function 
+
+        // Remove all non-digit characters
+        //string phonenumber;
+        //i:
+        //Console.Write("Enter a PhoneNumber : ");
+        //phonenumber = Console.ReadLine();
+        //string cleanedNumber = Regex.Replace(phonenumber, @"\D", "");
+
+        //    string pattern = @"\d{10}$";
+        //    if (Regex.IsMatch(cleanedNumber, pattern))
+        //    {
+        //        Match number = Regex.Match(cleanedNumber, pattern);
+        //        Console.WriteLine("Found :" + number);
+        //    }
+        //    Console.WriteLine();
+        //Console.Write("Enter y to continue n to Exit : ");
+        //string userinput = Console.ReadLine();
+        //if (userinput == "y")
+        //{
+        //    goto i;
+        //}
+
+
+
+
+        // *****************************************DATE TIME TASK*****************************************
+        // Task 1
+        // Enter any random date and print it is weekday or weekend.
+        // Input date in the format YYYY-MM-DD
+        //i:
+        // Console.Write("Enter a date (YYYY-MM-DD): ");
+        // string dateInput = Console.ReadLine();
+        // // Parse the input string to a DateTime object
+        // if (DateTime.TryParse(dateInput, out DateTime date))
+        // {
+        //     // Get the day of the week
+        //     DayOfWeek dayOfWeek = date.DayOfWeek;
+
+        //     // Check if it's a weekend (Saturday or Sunday)
+        //     if (dayOfWeek == DayOfWeek.Saturday || dayOfWeek == DayOfWeek.Sunday)
+        //     {
+        //         Console.WriteLine("It's a weekend!");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("It's a weekday.");
+        //     }
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Invalid date Format please enter the correct format (YYYY-MM-DD)");
+        //     goto i;
+        // }
+
+
+
+        // Task 2
+        // Enter your birth date and print the current age.
+        Console.Write("Enter your birth date (YYYY-MM-DD): ");
+        string input = Console.ReadLine();
+        // Parse the input into a DateTime object
+        if (DateTime.TryParse(input, out DateTime birthDate))
+        {
+            // Get the current date
+            DateTime currentDate = DateTime.Today;
+
+            // Calculate the age
+            int age = currentDate.Year - birthDate.Year;
+
+            // Adjust the age if the birthday hasn't occurred yet this year
+            if (birthDate > currentDate.AddYears(-age))
+            {
+                age--;
+            }
+
+            // Print the age
+            Console.WriteLine($"Your current age is: {age}");
+        }
+        else
+        {
+            Console.WriteLine("Invalid date format. Please enter a valid date in the format yyyy-MM-dd.");
+        }
+
+
+        // Task 3
+        // 
+
+
+
 
         // ****************************************COLLECTION TASK:**************************************************************** 
         // 1.Create a List / Array List of Stationary items and perform insert, 
         // delete and search operation.
 
-        List<string> stationary = new List<string>();
-        stationary.Add("books");//Added elements
-        stationary.Add("pens");//Added elements
-        stationary.Add("cloths");//Added elements
-        foreach (string item in stationary)
-        {
-            Console.Write($"Added three elements : {item}");
-        } 
-        stationary.Remove(stationary[2]);//Removed elements
-        foreach (string str in stationary)
-        {
-            Console.Write($"After Deleting one element : {str}");
-        }       
-        Console.WriteLine(stationary);
-        int index =stationary.IndexOf("books");
-        Console.WriteLine($"index of books : {index}");
+        //List<string> stationary = new List<string>();
+        //stationary.Add("Books");//Added elements
+        //stationary.Add("Pens");//Added elements
+        //stationary.Add("Cloths");//Added elements
+        //stationary.Add("Marker");//Added elements
+
+        //Console.WriteLine($"Added three elements :");
+        //foreach (string item in stationary)
+        //{
+        //    Console.WriteLine(item);
+        //}
+        //stationary.Remove(stationary[2]);//Removed elements
+        //Console.WriteLine($"After Deleting one element :");
+        //foreach (string str in stationary)
+        //{
+        //    Console.WriteLine(str);
+        //}
+        //string searchItem = "Pens";
+        //if (stationary.Contains(searchItem))
+        //{
+        //    Console.WriteLine($"\nItem '{searchItem}' found in the stationary list.");
+        //}
+        //else
+        //{
+        //    Console.WriteLine($"\nItem '{searchItem}' not found in the stationary list.");
+        //}
+
+        // Task 2
+        // 2. String str= “London Tokyo Paris Sydney Toronto Berlin Mumbai 
+        // Beijing Dubai Los - Angeles Singapore Rome Istanbul São-Paulo
+        // Chicago Madrid Shanghai Seoul Hong - Kong Buenos Aires Moscow
+        // Amsterdam Cairo Delhi”
+        // Create a list of cities from the above string.
+
+        //string str = "London Tokyo Paris Sydney Toronto Berlin Mumbai Beijing Dubai Los-Angeles Singapore Rome Istanbul São-Paulo Chicago Madrid Shanghai Seoul Hong-Kong Buenos Aires Moscow Amsterdam Cairo Delhi";
+        //string[] lines = str.Split(' ');
+        //List<string> cities = new List<string>();
+        //foreach (string  c in lines)
+        //{
+        //    cities.Add(c);
+
+        //}
+        //foreach (string c in cities)
+        //{
+        //    Console.WriteLine(c);
+        //}
+
+        // Task 3
+        // Create a dictionary of state names and their capital and perform 
+        // insert, delete and search operation.
+
+        //Dictionary<string,string> States_Capitals = new ();
+
+        //States_Capitals.Add("Alabama", "Montgomery");//Adding Elements
+        //States_Capitals.Add("Alaska", "Juneau");//Adding Elements
+        //States_Capitals.Add("Arizona", "Phoenix");//Adding Elements
+        //States_Capitals.Add("Arkansas", "Little Rock");//Adding Elements
+        //States_Capitals.Add("California", "Sacramento");//Adding Elements
+        //States_Capitals.Add("Colorado", "Denver");//Adding Elements
+        //States_Capitals.Add("Florida", "Tallahassee");//Adding Elements
+        //States_Capitals.Add("Georgia", "Atlanta");//Adding Elements
+        //States_Capitals.Add("Hawaii", "Honolulu");//Adding Elements
+        //States_Capitals.Add("Texas", "Austin");//Adding Elements
+        //Console.WriteLine("After Adding 10 States With There Capital");
+        //foreach(var i in States_Capitals)
+        //{
+        //    Console.WriteLine(i);
+        //}
+        //Console.WriteLine("After Deleting One Element");
+        //States_Capitals.Remove("Alabama");//Deleting Element by Giving Key or Value
+        //foreach (var j in States_Capitals)
+        //{
+        //    Console.WriteLine(j);
+        //}
+        //Console.WriteLine(States_Capitals["Arizona"]);// Searching Element by Giving Key or Value
 
 
+        //*******************************************Exception Handling*******************************************
 
-
-
-
-
+        // Task 1
+        // Enter two numbers and handle division by zero exception.
+        //  
+        // 
 
 
 
